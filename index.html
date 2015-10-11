@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Introduction to jQuery </title>
+    <meta name="author" content="gakshayapps" />
+    <!-- STYLESHEETS -->
+    <!-- <link rel="shortcut icon" href="../favicon.ico"> -->
+    <link rel="stylesheet" type="text/css" href="assets/css/impress/impress-demo.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/impress/googleFonts.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/impress/sansProFonts.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/prism.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+</head>
+
+<body class="impress-not-supported">
+    <div class="fallback-message">
+        <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+        <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+    </div>
+    <div id="impress">
+        <div class="step title" data-x="-2000" data-scale="2">
+            <h1>Introduction to jQuery</h1>
+        </div>
+        <div class="step slide" data-z="350">
+            <h2>What is $ </h2>
+            <p> <a href="#">$</a> is a alias for <a href="#">jQuery</a> </p>
+            <ul>
+                <li>Both do the same thing, its just a shorter way to access functions</li>
+                <li>other libraries using $ are prototype, mootools, etc.</li>
+                <li>use jQuery.noConflict() to avoid conflicts and to handover '$' to other libraries.</li>
+                <li>One can use anonymous functions as well.</li>
+            </ul>
+            <pre><code class="language-javascript">(function($){
+...
+})(jQuery);</code></pre>
+        </div>
+        <div class="step slide" data-x="350" data-rotate-y="90">
+            <h2>Selectors </h2>
+            <p> <a href="#"> $()</a> is query selector which returns a collection of matched elements found in the <a href="#">DOM</a> based on passed <a href="#">argument(s)</a></p>
+            <ul>
+                <li>id, class</li>
+                <li>HTML tag</li>
+                <li>Attribute</li>
+                <li>Pseudo-Selectors</li>
+                <li><a href="https://api.jquery.com/category/selectors/" target="selctors"> Other selectors</a></li>
+            </ul> 
+            <pre><code class="language-javascript">$('.class, #id, name[elem_name]');
+$('input, select, radio, h1');
+$('[name="elem_name"], link[rel="stylesheet"]') 
+$('tr:odd, div:visible')
+</code></pre>
+        </div>
+        <div class="step slide" data-z="-350" data-rotate-y="180">
+            <h2>Few Handy Selectors</h2>
+            <ul>
+                <li><a href="#">+ : adjacent selector</a> selects elements that are placed immediately after parent</li>
+                <li><a href="#">~ : loose adjacent selector</a> </li>
+                <li>> : direct children</li>
+            </ul> 
+            <pre><code class="language-javascript"> Example </code></pre>
+        </div>
+        <div class="step slide" data-x="-350" data-rotate-y="270">
+            <h2>Did $(selector) retuned anything?</h2>
+            <pre><code class="language-javascript">if ( $( '#nonexistent' ) ) {
+  // Wrong! This code will always run!
+}
+if ( $( '#nonexistent' ).length > 0 ) {
+  // Correct! This code will only run if there's an 
+  // element in your page with an ID of 'nonexistent'
+}
+As 0 is a falsy value
+if ( $( '#nonexistent' ).length ) {
+  // This code will only run if there's a matching 
+  //element
+}</code></pre>
+        </div>
+        <div class="step slide" data-y="-350" data-rotate-x="90" data-rotate-y="360">
+            <h2>Access particular element from selection</h2>
+            <p>  <a href="#"> </a> </p>
+            <pre><code class="language-javascript">// selects first matching element
+$('#ID')    
+// select extreme element
+$('selector').first()  // similar to :first
+$('selector').last()   // similar to :last
+// select n-th element
+$('selector')[n]    // returns javascript obj
+                    // which breaks the chaining
+$('selector').eq(n) // takes -ve value as well
+</code></pre>
+        </div>
+        <div class="step slide" data-y="350" data-rotate-x="270" data-rotate-y="360">
+           <h2>Optimizing Selectors</h2>
+            <ul>
+                <li>Begin your selector with an ID if posiible
+                <pre><code class="language-javascript">// Fast:
+$( "#container div.myElem" );
+ 
+// Super-fast:
+$( "#container" ).find( "div.myElem" );</code></pre>
+                </li>
+                <li>Be specific on the right-hand side of your selector, and less specific on the left
+                    <pre><code class="language-javascript">// Unoptimized:
+$( "div.data .myElem" );
+ 
+// Optimized:
+$( ".data td.myElem" );</code></pre>
+                </li>
+            </ul>
+        </div>
+        <div class="step slide" data-y="1000">
+            <ul>
+                <li>Avoid excessive specificity 
+                    <pre><code class="language-javascript">$(".box table#attendees tbody tr td.myElem");
+ 
+// Better: Drop the middle if possible.
+$( "#attendees td.myElem" );</code></pre>
+                </li>
+            </ul>
+        </div>
+
+        <div class="step slide" data-x="2000" data-y="0" data-z="2350">
+            <h2></h2>
+            <p> <a href="#"> $()</a> </p>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <pre><code class="language-javascript"></code></pre>
+        </div>
+        <div class="step slide" data-x="2350" data-y="0" data-z="2000" data-rotate-y="90">
+            <h2></h2>
+            <p> <a href="#"> $()</a> </p>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <pre><code class="language-javascript"></code></pre>
+        </div>
+        <div class="step slide" data-x="2000" data-y="0" data-z="1650" data-rotate-y="180">
+            This is face 33
+        </div>
+        <div class="step slide" data-x="1650" data-y="0" data-z="2000" data-rotate-y="270">
+            This is face 44
+        </div>
+        <div class="step slide" data-x="2000" data-y="-350" data-z="2000" data-rotate-x="90" data-rotate-y="360">
+            This is face 55
+        </div>
+        <div class="step slide" data-x="2000" data-y="350" data-z="2000" data-rotate-x="270" data-rotate-y="360">
+            This is face 66
+        </div>
+        <div class="step slide-circle" data-x="3250" data-y="-600" data-z="2650" data-rotate-y="120">
+            This is face 111
+        </div>
+        <div class="step slide-circle" data-x="3020" data-y="-300" data-z="2000" data-rotate-y="100">
+            This is face 222
+        </div>
+        <div class="step slide-circle" data-x="3020" data-y="0" data-z="1310" data-rotate-y="80">
+            This is face 333
+        </div>
+        <div class="step slide-circle" data-x="3250" data-y="300" data-z="660" data-rotate-y="60">
+            This is face 444
+        </div>
+        <div class="step slide-circle" data-x="3720" data-y="600" data-z="155" data-rotate-y="40">
+            This is face 555
+        </div>
+        <div class="step slide-circle" data-x="4335" data-y="900" data-z="-160" data-rotate-y="20">
+            This is face 666
+        </div>
+        <div class="step slide" data-x="5500" data-y="-1400">
+            This is face 111
+        </div>
+        <div class="step slide" data-x="5500" data-y="-700">
+            This is face 222
+        </div>
+        <div class="step slide" data-x="5500" data-y="0">
+            This is face 333
+        </div>
+        <div class="step slide" data-x="5500" data-y="700">
+            This is face 444
+        </div>
+        <div class="step slide" data-x="5500" data-y="1400">
+            This is face 555
+        </div>
+        <div class="step slide" data-x="5500" data-y="2100">
+            This is face 666
+        </div>
+        <div class="step slide" data-x="14200" data-rotate-x="360" data-rotate-y="360">
+            This is face 7
+        </div>
+        <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+        </div>
+    </div>
+    <div class="hint">
+        <p>Use a spacebar or arrow keys to navigate</p>
+    </div>
+    <!-- SCRIPTS -->
+    <script src="assets/js/jquery/jquery-1.11.3.js"></script>
+    <script src="assets/js/impress/impress.js"></script>
+    <script>
+    impress().init();
+    </script>
+    <script src="assets/js/prism.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

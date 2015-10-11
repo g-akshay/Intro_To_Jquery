@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <!-- h1#ex{Example: }+div.exampleCon>ul>li.list#item${Item $}*8 -->
+    <h1>Example: Handy selectors</h1>
+    <div class="exampleCon" id="ex1">
+        <ul>
+            <li class="list" id="item1">Item 1</li>
+            <li class="list" id="item2">Item 2</li>
+            <li class="list" id="item3">Item 3</li>
+            <li class="list" id="item4">Item 4</li>
+            <li class="list" id="item5">Item 5</li>
+            <li class="list" id="item6">Item 6</li>
+            <li class="list" id="item7">Item 7</li>
+            <li class="list" id="item8">Item 8</li>
+        </ul>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="assets/js/jquery/jquery-1.11.3.js"></script>
+    <script>
+    $('#ex1 ul').find('+li').css('color': 'red');
+    </script>
+</body>
+
+</html>

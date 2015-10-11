@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Introduction to jQuery </title>
+    <meta name="author" content="gakshayapps" />
+    <!-- STYLESHEETS -->
+    <!-- <link rel="shortcut icon" href="../favicon.ico"> -->
+    <link rel="stylesheet" type="text/css" href="assets/css/impress/impress-demo.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/impress/googleFonts.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+</head>
+
+<body class="impress-not-supported">
+    <div class="fallback-message">
+        <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+        <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+    </div>
+    <div id="impress">
+        <div id="face-0" class="step" data-x="-1350">
+            Title
+        </div>
+
+        <div id="face-1" class="step" data-z="350">
+            This is face 1
+        </div>
+        <div id="face-2" class="step" data-x="350" data-rotate-y="90">
+            This is face 2
+        </div>
+        <div id="face-3" class="step" data-z="-350" data-rotate-y="180">
+            This is face 3
+        </div>
+        <div id="face-4" class="step" data-x="-350" data-rotate-y="270">
+            This is face 4
+        </div>
+        <div id="face-5" class="step" data-y="-350" data-rotate-x="90" data-rotate-y="360">
+            This is face 5
+        </div>
+        <div id="face-6" class="step" data-y="350" data-rotate-x="270" data-rotate-y="360">
+            This is face 6
+        </div>
+
+        <div id="face-7" class="step" data-x="14200" data-rotate-x="360" data-rotate-y="360">
+            This is face 7
+        </div>
+        <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+        </div>
+    </div>
+    <div class="hint">
+        <p>Use a spacebar or arrow keys to navigate</p>
+    </div>
+    <!-- SCRIPTS -->
+    <script src="assets/js/jquery/jquery-1.11.3.js"></script>
+    <script src="assets/js/impress/impress.js"></script>
+    <script>
+    impress().init();
+    </script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
