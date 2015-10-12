@@ -92,3 +92,7 @@ pre[class*="language-"] {
 .token.punctuation {
     color: #3E3D3D !important;
 }
+
+.token.operator{
+    background:transparent;
+}

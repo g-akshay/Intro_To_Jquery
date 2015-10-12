@@ -22,8 +22,27 @@
         <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
     </div>
     <div id="impress">
-        <div class="step title" data-x="-2000" data-scale="2">
+        <div class="step title" data-x="-2500" data-scale="2">
             <h1>Introduction to jQuery</h1>
+        </div>
+        <div class="step slide" data-x="-1000">
+           <h2>Javascript vs jQuery</h2>
+           <pre><code class="language-html">// button elem
+&lt;input id="fooBtn" type="button" value="Click Me"/>
+</code></pre>
+            <ul>
+                <li>Set text color to red and bind click event
+                    <pre><code class="language-javascript">// javascript way
+document.getElementById('fooBtn').style
+                        .color = 'red';
+document.getElemementById("fooBtn").
+ addEventListener('click',function(){ ... });
+
+// jQuery way
+$('#fooBtn').css('color','red')
+            .click(function(){ ... });</code></pre>
+                </li>                
+            </ul>            
         </div>
         <div class="step slide" data-z="350">
             <h2>What is $ </h2>
@@ -46,12 +65,12 @@
                 <li>HTML tag</li>
                 <li>Attribute</li>
                 <li>Pseudo-Selectors</li>
-                <li><a href="https://api.jquery.com/category/selectors/" target="selctors"> Other selectors</a></li>
+                <li><a href="https://api.jquery.com/category/selectors/" target="selctors"> <u>Other selectors</u></a></li>
             </ul> 
             <pre><code class="language-javascript">$('.class, #id, name[elem_name]');
 $('input, select, radio, h1');
-$('[name="elem_name"], link[rel="stylesheet"]') 
-$('tr:odd, div:visible')
+$('[name="elem_name"],link[rel="stylesheet"]');
+$('tr:odd, div:visible');
 </code></pre>
         </div>
         <div class="step slide" data-z="-350" data-rotate-y="180">
@@ -95,7 +114,7 @@ $('selector').eq(n) // takes -ve value as well
         <div class="step slide" data-y="350" data-rotate-x="270" data-rotate-y="360">
            <h2>Optimizing Selectors</h2>
             <ul>
-                <li>Begin your selector with an ID if posiible
+                <li>Begin your selector with an ID if possible
                 <pre><code class="language-javascript">// Fast:
 $( "#container div.myElem" );
  
