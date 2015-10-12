@@ -48,9 +48,9 @@ $('#fooBtn').css('color','red')
             <h2>What is $ </h2>
             <p> <a href="#">$</a> is a alias for <a href="#">jQuery</a> </p>
             <ul>
-                <li>Both do the same thing, its just a shorter way to access functions</li>
-                <li>other libraries using $ are prototype, mootools, etc.</li>
-                <li>use jQuery.noConflict() to avoid conflicts and to handover '$' to other libraries.</li>
+                <li>All of jQuery lives inside a single global function which is 'jQuery'</li>
+                <li>Other libraries using $ are prototype, mootools, etc.</li>
+                <li>Use jQuery.noConflict() to avoid conflicts and to handover '$' to other libraries.</li>
                 <li>One can use anonymous functions as well.</li>
             </ul>
             <pre><code class="language-javascript">(function($){
@@ -112,7 +112,20 @@ $('selector').eq(n) // takes -ve value as well
 </code></pre>
         </div>
         <div class="step slide" data-y="350" data-rotate-x="270" data-rotate-y="360">
-           <h2>Optimizing Selectors</h2>
+           <h2>Getter and Setters</h2>
+            <ul>
+                <li><a href="#">.html()</a> - Get or set the HTML contents</li>
+                <li><a href="#">.text()</a> - Get or set the text contents</li>
+                <li><a href="#">.val()</a> - Get or set the value of form elements</li>                
+                <li><a href="#">.attr()</a> - Get or set the value of the provided attribute</li>
+                <li><a href="#">.width(), .heigth()</a> - Get or set width or height in px of first element in collection</li>
+                <li><a href="#">.position()</a> - Get position information of first element in collection(only getter)</li>
+            </ul>
+            <br>
+            <pre><code class="language-javascript">        Lets inspect and try them out !!!</code></pre>
+        </div>
+        <div class="step slide" data-y="1000">
+            <h2>Optimizing Selectors</h2>
             <ul>
                 <li>Begin your selector with an ID if possible
                 <pre><code class="language-javascript">// Fast:
@@ -130,7 +143,8 @@ $( ".data td.myElem" );</code></pre>
                 </li>
             </ul>
         </div>
-        <div class="step slide" data-y="1000">
+
+        <div class="step slide" data-y="2000">
             <ul>
                 <li>Avoid excessive specificity 
                     <pre><code class="language-javascript">$(".box table#attendees tbody tr td.myElem");
@@ -141,16 +155,25 @@ $( "#attendees td.myElem" );</code></pre>
             </ul>
         </div>
 
-        <div class="step slide" data-x="2000" data-y="0" data-z="2350">
-            <h2></h2>
-            <p> <a href="#"> $()</a> </p>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
+        <div class="step title" data-x="2000" data-y="-1000" data-z="2350">
+            <h1>When to use What</h1>
             <pre><code class="language-javascript"></code></pre>
+        </div>
+        <div class="step slide" data-x="2000" data-y="0" data-z="2350">
+            <h2>' == ' vs ' === '</h2>
+            <ul>
+                <li>=== and !== are strict equality operator: considers value equal when they are of same type</li>
+                <li>== and != are lenient equator (EVIL TWINS): tries to convert values of different types, before comparing like strict equality</li>
+            </ul>
+            <pre><code class="language-javascript">'10' === 10  // false
+'10' == 10  // true
+// some WIERED behaviour of EVIL TWINS
+"" == '0'   /*false*/  false == 'false' /*false*/
+0  == ""   /*true*/    false == null    /*false*/
+0  == '0'  /*true*/    false == '0'     /*true*/
+false == undefined  /*false*/
+null  == undefined  /*true*/
+</code></pre>
         </div>
         <div class="step slide" data-x="2350" data-y="0" data-z="2000" data-rotate-y="90">
             <h2></h2>
