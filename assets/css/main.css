@@ -81,18 +81,53 @@ pre[class*="language-"] {
     text-shadow: 0 0px !important;
 }
 
-.token.selector, .token.attr-name, .token.string, .token.char, .token.builtin, .token.inserted {
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
     color: green !important;
 }
 
-.token.comment{
-      font-size: 85% !important;
+.token.comment {
+    font-size: 85% !important;
 }
 
 .token.punctuation {
     color: #3E3D3D !important;
 }
 
-.token.operator{
-    background:transparent;
+.token.operator {
+    background: transparent;
+}
+
+.thanks h1 {
+    text-align: center;
+    font-size: 2em;
+}
+
+.thanks ul {
+    text-align: center;
+    font-size: 72% !important;
+    color: #545151;
+}
+
+.thanks .fa {
+    font-size: 1.4em;
+    margin: 0px 7px 0px 0;
+}
+
+.thanks label {}
+
+.twitter {
+    color: #55acee;
+}
+
+.stackoverrflow {
+    color: #A57D35;
+}
+
+.github {
+    color: black;
 }

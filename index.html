@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/impress/googleFonts.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/impress/sansProFonts.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/prism.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
 </head>
 
@@ -219,37 +220,53 @@ null  == undefined  /*true*/
             </ul>            
         </div>
         <div class="step slide" data-x="1650" data-y="0" data-z="2000" data-rotate-y="270">
-            <h2>.each() vs .map()</h2>
-            <p> <a href="#"> $()</a> </p>
+            <h2>each() vs map()</h2>
+            <p> <a href="#"> 2 variants for both functions</a> </p>
             <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li><a href="#">$.each(), $.map()</a> iterates over array and JSON</li>
+                <li><a href="#">.each(), .map()</a> iterates over jQuery collection </li>
             </ul>
-            <pre><code class="language-javascript"></code></pre>
+            <br>
+            <pre><code class="language-javascript">$.each( [1,2,3], function(index, value){
+    // do something
+});
+
+$('.dropdowns').each(function(index, element){
+   // do something 
+});
+</code></pre>
         </div>
         <div class="step slide" data-x="2000" data-y="-350" data-z="2000" data-rotate-x="90" data-rotate-y="360">
-            <h2></h2>
-            <p> <a href="#"> $()</a> </p>
+            <h2>each() vs map()</h2>
+            <pre><code class="language-javascript">$.map( [1,2,3], function(index, value){
+    // do something
+});
+
+$('.dropdowns').map(function(element, index){
+   // do something 
+});
+</code></pre>
             <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>.each(), $.each(), and .map()'s callback function take the index first, and then the element
+                    function </li>
             </ul>
-            <pre><code class="language-javascript"></code></pre>
         </div>
         <div class="step slide" data-x="2000" data-y="350" data-z="2000" data-rotate-x="270" data-rotate-y="360">
-            <h2></h2>
-            <p> <a href="#"> $()</a> </p>
+            <h2>each() vs map()</h2>
+            <pre><code class="language-javascript">var arr = [5,4,3,2,1];
+var eachArr = $.each(arr, function(index, num){
+    return num + 1;
+});
+
+var mapArr = $.map(arr, function(index, num){
+    return num + 1;
+});
+
+console.log(eachArr); // [5, 4, 3, 2, 1] 
+console.log(mapArr); // [6, 5, 4, 3, 2] </code></pre>
             <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>Returning <a href="#">false</a> in each() block terminates the loop whereas in map() <a href="#">false</a> becomes part of new array</li>
             </ul>
-            <pre><code class="language-javascript"></code></pre>
         </div>
 
         <div class="step title" data-x="3200" data-y="-1400">
@@ -341,9 +358,16 @@ null  == undefined  /*true*/
             This is face 666
         </div> -->
 
-        <div class="step slide" data-x="14200" data-rotate-x="360" data-rotate-y="360">
-            This is face 7
+        <div class="step slide-circle thanks" data-x="14200" data-rotate-x="360" data-rotate-y="360">
+            <br>
+            <h1>Thank You</h1>
+            <ul>
+                <li><i class="fa fa-github github"></i> <label>@g-akshay</label></li>
+                <li><i class="fa fa-stack-overflow stackoverrflow"></i> <label>@g-akshay</label></li>
+                <li><i class="fa fa-twitter twitter"></i> <label>@g_akshay</label></li>
+            </ul>
         </div>
+
         <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
         </div>
     </div>
