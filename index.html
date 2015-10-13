@@ -65,7 +65,8 @@ $('#fooBtn').css('color','red')
                 <li>HTML tag</li>
                 <li>Attribute</li>
                 <li>Pseudo-Selectors</li>
-                <li><a href="https://api.jquery.com/category/selectors/" target="selctors"> <u>Other selectors</u></a></li>
+                <li><a href="https://api.jquery.com/category/selectors/" target="selctors"> 
+                    <u>Other selectors</u></a></li>
             </ul> 
             <pre><code class="language-javascript">$('.class, #id, name[elem_name]');
 $('input, select, radio, h1');
@@ -75,12 +76,14 @@ $('tr:odd, div:visible');
         </div>
         <div class="step slide" data-z="-350" data-rotate-y="180">
             <h2>Few Handy Selectors</h2>
-            <ul>
-                <li><a href="#">+ : adjacent selector</a> selects elements that are placed immediately after parent</li>
-                <li><a href="#">~ : loose adjacent selector</a> </li>
-                <li>> : direct children</li>
+            <ul id='direct'>
+                <li><a href="#">> : direct children</a> Selects immediate children</li>
+                <li id='adjacent'><a href="#">+ : adjacent selector</a> selects elements that are placed immediately after parent (similar to .next() ) </li>
+                <li><a href="#">~ : loose adjacent selector</a> selects elements that are placed at the 
+                same level</li>
             </ul> 
-            <pre><code class="language-javascript"> Example </code></pre>
+            <br>
+            <pre><code class="language-javascript">           Lets try these on console !!!</code></pre>
         </div>
         <div class="step slide" data-x="-350" data-rotate-y="270">
             <h2>Did $(selector) retuned anything?</h2>
@@ -112,8 +115,9 @@ $('selector').eq(n) // takes -ve value as well
 </code></pre>
         </div>
         <div class="step slide" data-y="350" data-rotate-x="270" data-rotate-y="360">
-           <h2>Getter and Setters</h2>
-            <ul>
+           <h2 id='text' name='slide_title'>Getter and Setters</h2>
+           <input id='value' type="hidden" value="You got me!!!">
+           <ul id='html'>
                 <li><a href="#">.html()</a> - Get or set the HTML contents</li>
                 <li><a href="#">.text()</a> - Get or set the text contents</li>
                 <li><a href="#">.val()</a> - Get or set the value of form elements</li>                
@@ -152,13 +156,24 @@ $( ".data td.myElem" );</code></pre>
 // Better: Drop the middle if possible.
 $( "#attendees td.myElem" );</code></pre>
                 </li>
+                <li>Avoid Selector Repetition
+                    <pre><code class="language-javascript">$("p").css("color", "blue");
+$("p").css("font-size", "12px");
+$("p").text("Change my text.");
+
+// instead take advantage of jQuery's chaining
+$("p").css({ "color"     : "blue",
+             "font-size" : "12px"})
+      .text("Change my text.");
+</code></pre>
+                </li>
             </ul>
         </div>
 
-        <div class="step title" data-x="2000" data-y="-1000" data-z="2350">
-            <h1>When to use What</h1>
-            <pre><code class="language-javascript"></code></pre>
+        <div class="step title" data-x="2000" data-y="-800" data-z="2350">
+            <h1>When to use What</h1>            
         </div>
+
         <div class="step slide" data-x="2000" data-y="0" data-z="2350">
             <h2>' == ' vs ' === '</h2>
             <ul>
@@ -176,6 +191,45 @@ null  == undefined  /*true*/
 </code></pre>
         </div>
         <div class="step slide" data-x="2350" data-y="0" data-z="2000" data-rotate-y="90">
+            <h2>.attr() vs .data()</h2>
+            <p> <a href="#"> data set with .attr()</a> </p>
+            <ul>
+                <li id='stuff' name='stuff' data-my-stuff='bla bla'>Accessible from <a href="#">.attr('data-some-name')</a></li>
+                <li>Attribute and value are visible on the element upon inspection</li>
+                <li><a href="#">data-</a> attributes signify server-side data</li>
+                <li>Objects can not be stored</li>
+            </ul>
+            <br>
+            <p> <a href="#"> Accessing with .data()</a> </p>
+            <ul>
+                <li>Skip the <a href="#">data-</a> part <a href="#">.data('some-name')</a></li>
+                <li>Understands camel-casing convention <a href="#">.data('someName')</a></li>
+            </ul>
+        </div>
+        <div class="step slide" data-x="2000" data-y="0" data-z="1650" data-rotate-y="180">
+            <h2>.attr() vs .data()</h2>
+            <p> <a href="#"> data set with .data()</a> </p>
+            <ul>
+                <li id='safe'>Accessible only from .data(name)</li>
+                <li>Not accessible from .attr() or anywhere else</li>
+                <li>Not visible on the element when inspected</li>
+                <li>Most important => Objects can be stored</li>
+                <li>Data can not be accessed without using jQuery</li>
+                <li><a href="#">Thumb Rule</a>:  use .attr() to extract metadata that's been added to the markup and use .data() to get/set dynamic application specific values.</li>
+            </ul>            
+        </div>
+        <div class="step slide" data-x="1650" data-y="0" data-z="2000" data-rotate-y="270">
+            <h2>.each() vs .map()</h2>
+            <p> <a href="#"> $()</a> </p>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <pre><code class="language-javascript"></code></pre>
+        </div>
+        <div class="step slide" data-x="2000" data-y="-350" data-z="2000" data-rotate-x="90" data-rotate-y="360">
             <h2></h2>
             <p> <a href="#"> $()</a> </p>
             <ul>
@@ -186,19 +240,89 @@ null  == undefined  /*true*/
             </ul>
             <pre><code class="language-javascript"></code></pre>
         </div>
-        <div class="step slide" data-x="2000" data-y="0" data-z="1650" data-rotate-y="180">
-            This is face 33
-        </div>
-        <div class="step slide" data-x="1650" data-y="0" data-z="2000" data-rotate-y="270">
-            This is face 44
-        </div>
-        <div class="step slide" data-x="2000" data-y="-350" data-z="2000" data-rotate-x="90" data-rotate-y="360">
-            This is face 55
-        </div>
         <div class="step slide" data-x="2000" data-y="350" data-z="2000" data-rotate-x="270" data-rotate-y="360">
-            This is face 66
+            <h2></h2>
+            <p> <a href="#"> $()</a> </p>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <pre><code class="language-javascript"></code></pre>
         </div>
-        <div class="step slide-circle" data-x="3250" data-y="-600" data-z="2650" data-rotate-y="120">
+
+        <div class="step title" data-x="3200" data-y="-1400">
+            <h1>The World Hates alert()</h1>            
+        </div>
+        <div class="step slide" data-x="3200" data-y="-700">
+            <h2></h2>
+            <p> <a href="#"> $()</a> </p>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <pre><code class="language-javascript"></code></pre>
+        </div>
+        <div class="step slide" data-x="3200" data-y="0">
+            <h2></h2>
+            <p> <a href="#"> $()</a> </p>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <pre><code class="language-javascript"></code></pre>
+        </div>
+        <div class="step slide" data-x="3200" data-y="700">
+            <h2></h2>
+            <p> <a href="#"> $()</a> </p>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <pre><code class="language-javascript"></code></pre>
+        </div>
+        <div class="step slide" data-x="3200" data-y="1400">
+            <h2></h2>
+            <p> <a href="#"> $()</a> </p>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <pre><code class="language-javascript"></code></pre>
+        </div>
+        <div class="step slide" data-x="3200" data-y="2100">
+           <h2></h2>
+            <p> <a href="#"> $()</a> </p>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <pre><code class="language-javascript"></code></pre>
+        </div>
+        <div class="step slide" data-x="3200" data-y="2800">
+            <h2></h2>
+            <p> <a href="#"> $()</a> </p>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <pre><code class="language-javascript"></code></pre>
+        </div>
+        
+        <!-- <div class="step slide-circle" data-x="3250" data-y="-600" data-z="2650" data-rotate-y="120">
             This is face 111
         </div>
         <div class="step slide-circle" data-x="3020" data-y="-300" data-z="2000" data-rotate-y="100">
@@ -215,25 +339,8 @@ null  == undefined  /*true*/
         </div>
         <div class="step slide-circle" data-x="4335" data-y="900" data-z="-160" data-rotate-y="20">
             This is face 666
-        </div>
-        <div class="step slide" data-x="5500" data-y="-1400">
-            This is face 111
-        </div>
-        <div class="step slide" data-x="5500" data-y="-700">
-            This is face 222
-        </div>
-        <div class="step slide" data-x="5500" data-y="0">
-            This is face 333
-        </div>
-        <div class="step slide" data-x="5500" data-y="700">
-            This is face 444
-        </div>
-        <div class="step slide" data-x="5500" data-y="1400">
-            This is face 555
-        </div>
-        <div class="step slide" data-x="5500" data-y="2100">
-            This is face 666
-        </div>
+        </div> -->
+
         <div class="step slide" data-x="14200" data-rotate-x="360" data-rotate-y="360">
             This is face 7
         </div>
