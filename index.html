@@ -47,7 +47,7 @@ $('#fooBtn').css('color','red')
         </div>
         <div class="step slide" data-z="350">
             <h2>What is $ </h2>
-            <p> <a href="#">$</a> is a alias for <a href="#">jQuery</a> </p>
+            <p> <a href="#">$</a> is an alias for <a href="#">jQuery</a> </p>
             <ul>
                 <li>All of jQuery lives inside a single global function which is 'jQuery'</li>
                 <li>Other libraries using $ are prototype, mootools, etc.</li>
@@ -87,7 +87,7 @@ $('tr:odd, div:visible');
             <pre><code class="language-javascript">           Lets try these on console !!!</code></pre>
         </div>
         <div class="step slide" data-x="-350" data-rotate-y="270">
-            <h2>Did $(selector) retuned anything?</h2>
+            <h2>Did $(selector) returned anything?</h2>
             <pre><code class="language-javascript">if ( $( '#nonexistent' ) ) {
   // Wrong! This code will always run!
 }
@@ -273,39 +273,71 @@ console.log(mapArr); // [6, 5, 4, 3, 2] </code></pre>
             <h1>The World Hates alert()</h1>            
         </div>
         <div class="step slide" data-x="3200" data-y="-700">
-            <h2></h2>
-            <p> <a href="#"> $()</a> </p>
+            <h2>Cons of using alert()</h2>
             <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>It halts the execution flow and all other interactions</li>
+                <li>One can not suppress it in non-debugging environment</li>
+                <li>There is no access to output once alert is closed (no history)</li>
+                <li>Its hard to inspect object content and traverse within it</li>
+                <li>End user is affected if any alert statement leaks into the production code</li>
             </ul>
-            <pre><code class="language-javascript"></code></pre>
         </div>
         <div class="step slide" data-x="3200" data-y="0">
-            <h2></h2>
-            <p> <a href="#"> $()</a> </p>
+            <h2>console .log, .dir()</h2>
+            <pre><code class="language-javascript">var weeks = ['mon','tue','wed','thu','fri',
+            'sat','sun'];</code></pre>
             <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li><a href="#">console.log()</a> prints out a toString representation. (Chrome prints out a HTML-like tree structure most of the time)</li>
             </ul>
-            <pre><code class="language-javascript"></code></pre>
+            <img src="assets/img/week-log.png">
+            <ul>
+                <li><a href="#">console.dir();</a> prints out a navigable JSON-like tree structure</li>             
+            </ul>
+            <img src="assets/img/week-tree.png">
         </div>
         <div class="step slide" data-x="3200" data-y="700">
-            <h2></h2>
-            <p> <a href="#"> $()</a> </p>
+            <h2>console.table()</h2>
+            <pre><code class="language-javascript">var people = [
+    { name : 'Mark', age : 23},
+    { name : 'Jacob', age : 18},
+    { name : 'Steve', age : 40},
+];</code></pre>
+<br>
+            <pre><code class="language-javascript">Try out console.dir() on people obj</code></pre>
             <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li><a href="#">console.table()</a> provides a tabular view of the data with sortable columns</li>
             </ul>
-            <pre><code class="language-javascript"></code></pre>
         </div>
         <div class="step slide" data-x="3200" data-y="1400">
+            <h2>console.count()</h2>
+            <ul>
+                <li>It helps in knowing the number of times a particular line is executed</li>
+            </ul>
+            <br>
+            <pre><code class="language-javascript">for(var i = 0; i < 3; i++){
+    // do something
+    console.count('Iteration number: ');
+}</code></pre>
+        </div>
+        <div class="step slide" data-x="3200" data-y="2100">
+           <h2>console .time(), .timeEnd()</h2>
+            <ul>
+                <li>Helps in understanding the time required to execute piece of code.</li>
+            </ul>
+            <br>
+            <pre><code class="language-javascript">console.time('Timer Name');
+for(var i = 0; i < 1000; i++){
+    // do something
+}
+console.timeEnd('Timer Name');</code></pre>
+        </div>
+
+        <div class="step title" data-x="4500" data-y='700'>
+            <a href="http://timelesstech.in/javascript-closures-a-building-block/" 
+                target='closures'><h1>Closures</h1></a>
+        </div>
+        
+        <!-- <div class="step slide-circle" data-x="3250" data-y="-600" data-z="2650" data-rotate-y="120">
             <h2></h2>
             <p> <a href="#"> $()</a> </p>
             <ul>
@@ -316,7 +348,7 @@ console.log(mapArr); // [6, 5, 4, 3, 2] </code></pre>
             </ul>
             <pre><code class="language-javascript"></code></pre>
         </div>
-        <div class="step slide" data-x="3200" data-y="2100">
+        <div class="step slide-circle" data-x="3020" data-y="-300" data-z="2000" data-rotate-y="100">
            <h2></h2>
             <p> <a href="#"> $()</a> </p>
             <ul>
@@ -326,24 +358,6 @@ console.log(mapArr); // [6, 5, 4, 3, 2] </code></pre>
                 <li></li>
             </ul>
             <pre><code class="language-javascript"></code></pre>
-        </div>
-        <div class="step slide" data-x="3200" data-y="2800">
-            <h2></h2>
-            <p> <a href="#"> $()</a> </p>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-            <pre><code class="language-javascript"></code></pre>
-        </div>
-        
-        <!-- <div class="step slide-circle" data-x="3250" data-y="-600" data-z="2650" data-rotate-y="120">
-            This is face 111
-        </div>
-        <div class="step slide-circle" data-x="3020" data-y="-300" data-z="2000" data-rotate-y="100">
-            This is face 222
         </div>
         <div class="step slide-circle" data-x="3020" data-y="0" data-z="1310" data-rotate-y="80">
             This is face 333
@@ -358,7 +372,13 @@ console.log(mapArr); // [6, 5, 4, 3, 2] </code></pre>
             This is face 666
         </div> -->
 
-        <div class="step slide-circle thanks" data-x="14200" data-rotate-x="360" data-rotate-y="360">
+        <div class="step slide-circle question" data-x="6200" data-y='700' data-rotate-x="180">
+            <br>
+            <h1>Quetions</h1>
+            <i class='fa fa-question faa-ring animated fa-6x'></i>
+        </div>
+
+        <div class="step slide-circle thanks" data-x="8000" data-y='700' data-rotate-x="360" >
             <br>
             <h1>Thank You</h1>
             <ul>
