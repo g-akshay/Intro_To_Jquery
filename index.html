@@ -28,14 +28,14 @@
         </div>
         <div class="step slide" data-x="-1000">
            <h2>Javascript vs jQuery</h2>
-           <pre><code class="language-html">// button elem
-&lt;input id="fooBtn" type="button" value="Click Me"/>
-</code></pre>
             <ul>
+                <li><pre><code class="language-html">// button elem
+&lt;input id="fooBtn" type="button" value="Click Me"/>
+</code></pre></li>
                 <li>Set text color to red and bind click event
                     <pre><code class="language-javascript">// javascript way
-document.getElementById('fooBtn').style
-                        .color = 'red';
+document.getElementById('fooBtn')
+            .style.color = 'red';
 document.getElemementById("fooBtn").
  addEventListener('click',function(){ ... });
 
@@ -139,7 +139,7 @@ $( "#container div.myElem" );
 // Super-fast:
 $( "#container" ).find( "div.myElem" );</code></pre>
                 </li>
-                <li>Be specific on the right-hand side of your selector, and less specific on the left
+                <li>Be specific on the left-hand side of your selector, and less specific on the right
                     <pre><code class="language-javascript">// Unoptimized:
 $( "div.data .myElem" );
  
@@ -270,7 +270,7 @@ console.log(mapArr); // [6, 5, 4, 3, 2] </code></pre>
         </div>
 
         <div class="step title" data-x="3200" data-y="-1400">
-            <h1>The World Hates alert()</h1>            
+            <h1>alert() vs console()</h1>            
         </div>
         <div class="step slide" data-x="3200" data-y="-700">
             <h2>Cons of using alert()</h2>
